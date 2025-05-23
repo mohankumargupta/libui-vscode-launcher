@@ -62,7 +62,7 @@ pub fn make_numbers_page(_ui: UI) -> Control {
     vbox_lists.append(combobox, LayoutStrategy::Compact);
     vbox_lists.append(combobox_editable, LayoutStrategy::Compact);
     vbox_lists.append(radiobuttons, LayoutStrategy::Compact);
-    
+
     // On MacOS, the last item in a list tends to take all the remaining space,
     // regardless of our `LayoutStrategy`. Because we don't want the radio buttons
     // to be all over the place, a dummy box is inserted to take the space instead

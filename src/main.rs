@@ -3,20 +3,38 @@
 
 extern crate libui;
 use libui::controls::*;
+use libui::layout;
 use libui::prelude::*;
 
 fn main() {
-    let ui = UI::init()
-        .expect("Couldn't initialize UI library");
-    
-    let mut win = Window::new(&ui, "Example", 800, 600, 
-        WindowType::NoMenubar);
-    let layout = VerticalBox::new();
+    let ui = UI::init().expect("Couldn't initialize UI library");
+    let mut win = Window::new(
+        &ui,
+        "VSCode Portable Quick Launcher",
+        800,
+        600,
+        WindowType::NoMenubar,
+    );
 
-    // add controls to your layout here
+    layout! {
+        &ui,
+        let layout = VerticalBox() {
+            Stretchy: let container = VerticalBox(padded: true) {
+                Compact: let choices = Combobox(selected: 0) {
+                    "one",
+                    "two",
+                    "three"
+                }
+                Compact: let hbox = HorizontalBox(padded: true) {
+                    Stretchy: let _sp = Spacer()
+                    Compact: let button = Button("Open VSCode Portable")
+                    Stretchy: let _sp = Spacer()
+                }
+            }
+        }
+    }
 
     win.set_child(layout);
     win.show();
     ui.main();
 }
-

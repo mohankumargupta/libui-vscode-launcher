@@ -5,3 +5,10 @@ edition = "2024"
 
 [dependencies]
 libui = "0.4.0"
+
+[profile.release]
+strip = true
+opt-level = "s"
+lto = true
+codegen-units = 1
+panic = "abort"
