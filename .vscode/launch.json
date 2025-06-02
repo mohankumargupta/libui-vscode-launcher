@@ -1,0 +1,304 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'libui-vscode-launcher'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=libui-vscode-launcher",
+                    "--package=libui-vscode-launcher"
+                ],
+                "filter": {
+                    "name": "libui-vscode-launcher",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'libui-vscode-launcher'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=libui-vscode-launcher",
+                    "--package=libui-vscode-launcher"
+                ],
+                "filter": {
+                    "name": "libui-vscode-launcher",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'basic'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=basic",
+                    "--package=libui-vscode-launcher"
+                ],
+                "filter": {
+                    "name": "basic",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'basic'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=basic",
+                    "--package=libui-vscode-launcher"
+                ],
+                "filter": {
+                    "name": "basic",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'builder'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=builder",
+                    "--package=libui-vscode-launcher"
+                ],
+                "filter": {
+                    "name": "builder",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'builder'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=builder",
+                    "--package=libui-vscode-launcher"
+                ],
+                "filter": {
+                    "name": "builder",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'canvas'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=canvas",
+                    "--package=libui-vscode-launcher"
+                ],
+                "filter": {
+                    "name": "canvas",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'canvas'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=canvas",
+                    "--package=libui-vscode-launcher"
+                ],
+                "filter": {
+                    "name": "canvas",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'controlgallery'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=controlgallery",
+                    "--package=libui-vscode-launcher"
+                ],
+                "filter": {
+                    "name": "controlgallery",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'controlgallery'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=controlgallery",
+                    "--package=libui-vscode-launcher"
+                ],
+                "filter": {
+                    "name": "controlgallery",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'inputs'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=inputs",
+                    "--package=libui-vscode-launcher"
+                ],
+                "filter": {
+                    "name": "inputs",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'inputs'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=inputs",
+                    "--package=libui-vscode-launcher"
+                ],
+                "filter": {
+                    "name": "inputs",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'inputs-grid'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=inputs-grid",
+                    "--package=libui-vscode-launcher"
+                ],
+                "filter": {
+                    "name": "inputs-grid",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'inputs-grid'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=inputs-grid",
+                    "--package=libui-vscode-launcher"
+                ],
+                "filter": {
+                    "name": "inputs-grid",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'menus'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=menus",
+                    "--package=libui-vscode-launcher"
+                ],
+                "filter": {
+                    "name": "menus",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'menus'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=menus",
+                    "--package=libui-vscode-launcher"
+                ],
+                "filter": {
+                    "name": "menus",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

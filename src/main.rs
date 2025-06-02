@@ -14,10 +14,8 @@ fn get_vscode_folders() -> Result<Vec<String>, std::io::Error> {
 }
 
 fn main()  -> Result<(), Box<dyn std::error::Error>> {
-
     let folders = get_vscode_folders()?;
     
-
     let ui = UI::init().expect("Couldn't initialize UI library");
     let mut win = Window::new(
         &ui,
@@ -40,17 +38,29 @@ fn main()  -> Result<(), Box<dyn std::error::Error>> {
                     Compact: let button = Button("Open VSCode Portable")
                     Stretchy: let _sp = Spacer()
                 }
+                Compact: let hbox = HorizontalBox(padded: true) {
+                    Stretchy: let _sp = Spacer()
+                    Compact: let debugging = Label("Debugging...")
+                    Stretchy: let _sp = Spacer()
+                }                
             }
         }
     }
 
-
     //Dynamic loading initial data
 
-    for folder in folders {
+    for folder in &folders {
         choices.append(&folder);
     }
     choices.set_selected(0);
+    button.on_clicked(move |_|{
+        let index = choices.selected();
+        if let &Some( folder) = &folders.get(index as usize) {
+            debugging.set_text(&folder);
+        }
+        // let dir = folders.index(index);
+        // debugging.set_text(dir);
+    });
 
     win.set_child(layout);
     win.show();
