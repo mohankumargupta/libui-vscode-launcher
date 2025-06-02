@@ -1,6 +1,12 @@
-use std::fs;
+use std::{fs, path::PathBuf};
 
 use directories::UserDirs;
+
+pub fn downloads_dir() -> Option<PathBuf>{
+    UserDirs::new().and_then(|dirs|{
+        dirs.download_dir().map(|dir| dir.to_path_buf())
+    })
+}
 
 pub fn get_vscode_portable_folder_names() -> Result<Vec<String>, std::io::Error> {
     let mut vscode_folders = Vec::new();

@@ -14,6 +14,7 @@ fn get_vscode_folders() -> Result<Vec<String>, std::io::Error> {
 }
 
 fn main()  -> Result<(), Box<dyn std::error::Error>> {
+    let download_directory = vscode::downloads_dir().unwrap_or("".into());
     let folders = get_vscode_folders()?;
     
     let ui = UI::init().expect("Couldn't initialize UI library");
@@ -56,7 +57,9 @@ fn main()  -> Result<(), Box<dyn std::error::Error>> {
     button.on_clicked(move |_|{
         let index = choices.selected();
         if let &Some( folder) = &folders.get(index as usize) {
-            debugging.set_text(&folder);
+            let mut fullpath = download_directory.clone();
+            fullpath.push(&folder);
+            debugging.set_text(&fullpath.to_string_lossy());
         }
         // let dir = folders.index(index);
         // debugging.set_text(dir);
