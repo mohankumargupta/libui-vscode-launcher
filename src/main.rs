@@ -68,7 +68,6 @@ fn main()  -> Result<(), Box<dyn std::error::Error>> {
             pwd_dir.push(&folder);
             let new_cmd = run_command.current_dir(&pwd_dir);
             let _ = new_cmd.spawn();
-            
         }
     });
 
