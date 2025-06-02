@@ -4,6 +4,8 @@
 mod vscode;
 
 extern crate libui;
+use std::process::Command;
+
 use libui::controls::*;
 use libui::layout;
 use libui::prelude::*;
@@ -59,10 +61,15 @@ fn main()  -> Result<(), Box<dyn std::error::Error>> {
         if let &Some( folder) = &folders.get(index as usize) {
             let mut fullpath = download_directory.clone();
             fullpath.push(&folder);
+            fullpath.push("Code.exe");
             debugging.set_text(&fullpath.to_string_lossy());
+            let mut run_command = Command::new(&fullpath);
+            let mut pwd_dir = download_directory.clone();
+            pwd_dir.push(&folder);
+            let new_cmd = run_command.current_dir(&pwd_dir);
+            let _ = new_cmd.spawn();
+            
         }
-        // let dir = folders.index(index);
-        // debugging.set_text(dir);
     });
 
     win.set_child(layout);
